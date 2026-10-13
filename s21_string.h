@@ -1,6 +1,10 @@
 #ifndef S21_STRING_H
 #define S21_STRING_H
 
+#include <stdlib.h>
+#include <stdarg.h>
+#include <limits.h>
+#include <stdio.h>
 
 #define S21_NULL ((void*)0)
 
@@ -23,5 +27,10 @@ char *s21_strrchr(const char *str, int c);
 char *s21_strstr(const char *haystack, const char *needle);
 char *s21_strtok(char *str, const char *delim);
 int s21_sprintf(char *str, const char *format, ...);
+
+void *s21_to_upper(const char *str);
+void *s21_to_lower(const char *str);
+void *s21_insert(const char *src, const char *str, s21_size start_index);
+void *s21_trim(const char *src, const char *trim_chars);
 
 #endif
